@@ -1,8 +1,9 @@
-const { DataTypes } = require("sequelize/types");
+const { datatype } = require("faker");
+const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
-class User extends Model {}
+class Users extends Model {}
 
-User.init(
+Users.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -14,6 +15,10 @@ User.init(
             type: DataTypes.STRING,
             allowNull: false
         },
+        email: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         pass: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -24,8 +29,8 @@ User.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user',
+    modelName: 'users',
   }
 );
 
-module.exports = User;
+module.exports = Users;

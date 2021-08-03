@@ -1,8 +1,9 @@
-const { DataTypes } = require("sequelize/types");
+const { datatype } = require("faker");
+const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
-class Comment extends Model {}
+class Comments extends Model {}
 
-Comment.init(
+Comments.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -22,6 +23,10 @@ Comment.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        comment: {
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
         posted_on: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -37,8 +42,8 @@ Comment.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'comment',
+    modelName: 'comments',
   }
 );
 
-module.exports = Comment;
+module.exports = Comments;

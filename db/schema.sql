@@ -3,7 +3,7 @@ CREATE DATABASE blog_db;
 
 USE blog_db;
 
-CREATE TABLE blog (
+CREATE TABLE blogs (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
     blogger_id INTEGER NOT NULL REFERENCES users(id),
     title VARCHAR(30) NOT NULL UNIQUE,
