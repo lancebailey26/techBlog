@@ -1,7 +1,5 @@
 const { Users } = require('../models');
 var faker = require('faker');
-const { random } = require('faker');
-
 
 const userData = [
     {

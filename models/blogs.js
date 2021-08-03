@@ -16,7 +16,7 @@ Blogs.init(
             references: {
                 model: 'users',
                 key: 'id'
-            }
+            },
         },
         title: {
             type: DataTypes.STRING,
