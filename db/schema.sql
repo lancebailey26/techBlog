@@ -1,0 +1,26 @@
+DROP DATABASE IF EXISTS blog_db;
+CREATE DATABASE blog_db;
+
+USE blog_db;
+
+CREATE TABLE blog (
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    blogger_id INTEGER NOT NULL REFERENCES users(id),
+    title VARCHAR(30) NOT NULL UNIQUE,
+    body TEXT NOT NULL
+);
+
+CREATE TABLE users (
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(30) NOT NULL,
+    email VARCHAR(30) NOT NULL UNIQUE,
+    pass VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE comments (
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    author_id INTEGER NOT NULL REFERENCES users(id),
+    title VARCHAR(255) NOT NULL,
+    comment TEXT NOT NULL,
+    posted_on INTEGER NOT NULL REFERENCES blogs(id)
+);
