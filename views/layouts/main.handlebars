@@ -6,8 +6,20 @@
     <title>MVC BLOG</title>
   </head>
   <body>
+    <nav>Tech Blog
+ {{#if logged_in}}
+        <a href="/dashboard">dashboard</a> |
+        <button class="no-button" id="logout">logout</button>
+        {{else}}
+        <a href="/login">login</a>
+        {{/if}}
+        </nav>  
     <main class="container container-fluid mt-5">
     {{{ body }}}
     </main>
+   
+{{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
   </body>
 </html>

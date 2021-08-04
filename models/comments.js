@@ -1,4 +1,4 @@
-const { datatype } = require("faker");
+
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 class Comments extends Model {}
@@ -15,13 +15,9 @@ Comments.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
-                model: 'users',
+                model: 'user',
                 key: 'id'
             }
-        },
-        title: {
-            type: DataTypes.STRING,
-            allowNull: false,
         },
         comment: {
             type: DataTypes.TEXT,

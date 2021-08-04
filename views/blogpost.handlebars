@@ -1,0 +1,33 @@
+<div class="text-center">
+  <h2>{{blog.title}} </h2>
+  <h3 id="blog-id">{{blog.id}}</h3>
+  <p>{{blog.body}}</p>
+  <p>Created by {{blog.user.name}}</p>
+</div>
+<hr>
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>add a comment:</h3>
+
+    <form class="form new-comment-form">
+      <div class="form-group">
+        <label for="comment-comment">Comment:</label>
+        <textarea class="form-input" id="comment-comment" name="comment-comment"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div>
+  <hr>
+<h2>COMMENT SECTION</h2>
+
+{{#each blog.comments as |comment|}}
+<div class="text-center">
+  <h3>{{comment.title}} <p> posted by: {{comment.user.name}}</p> </h3> 
+  
+  <p>{{comment.comment}}</p>
+  <hr>
+</div>
+{{/each}}
+<script src = "/js/comment.js"></script>

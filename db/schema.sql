@@ -5,22 +5,21 @@ USE blog_db;
 
 CREATE TABLE blogs (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    blogger_id INTEGER NOT NULL REFERENCES users(id),
+    blogger_id INTEGER NOT NULL REFERENCES user(id),
     title VARCHAR(30) NOT NULL UNIQUE,
     body TEXT NOT NULL
 );
 
-CREATE TABLE users (
+CREATE TABLE user (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(30) NOT NULL,
+    name VARCHAR(30) NOT NULL,
     email VARCHAR(30) NOT NULL UNIQUE,
-    pass VARCHAR(30) NOT NULL
+    password VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE comments (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    author_id INTEGER NOT NULL REFERENCES users(id),
-    title VARCHAR(255) NOT NULL,
+    author_id INTEGER NOT NULL REFERENCES user(id),
     comment TEXT NOT NULL,
     posted_on INTEGER NOT NULL REFERENCES blogs(id)
 );

@@ -1,33 +1,33 @@
-const { Users } = require('../models');
+const { User } = require('../models');
 var faker = require('faker');
 
 const userData = [
     {
-        username: faker.name.findName(),
+        name: faker.name.findName(),
         email: faker.internet.email(),
-        pass: faker.internet.password()
+        password: faker.internet.password()
     },
     {
-        username: faker.name.findName(),
+        name: faker.name.findName(),
         email: faker.internet.email(),
-        pass: faker.internet.password()
+        password: faker.internet.password()
     },
     {
-        username: faker.name.findName(),
+        name: faker.name.findName(),
         email: faker.internet.email(),
-        pass: faker.internet.password()
+        password: faker.internet.password()
     },
     {
-        username: faker.name.findName(),
+        name: faker.name.findName(),
         email: faker.internet.email(),
-        pass: faker.internet.password()
+        password: faker.internet.password()
     },
     {
-        username: faker.name.findName(),
+        name: faker.name.findName(),
         email: faker.internet.email(),
-        pass: faker.internet.password()
+        password: faker.internet.password()
     },
 ];
 
-const seedUsers = () => Users.bulkCreate(userData);
+const seedUsers = () => User.bulkCreate(userData);
 module.exports = seedUsers
