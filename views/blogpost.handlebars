@@ -5,29 +5,28 @@
   <p>Created by {{blog.user.name}}</p>
 </div>
 <hr>
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>add a comment:</h3>
+<div class="col-md-6">
+    <h2>leave a comment</h2>
 
-    <form class="form new-comment-form">
+    <form class="form comment-form">
       <div class="form-group">
-        <label for="comment-comment">Comment:</label>
-        <textarea class="form-input" id="comment-comment" name="comment-comment"></textarea>
+        <label for="commentform">comment</label>
+        <input class="form-input" type="comment" id="comment-comment" />
       </div>
       <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
+        <button class="btn btn-primary" type="submit">post</button>
       </div>
     </form>
   </div>
   <hr>
 <h2>COMMENT SECTION</h2>
 
+
 {{#each blog.comments as |comment|}}
 <div class="text-center">
-  <h3>{{comment.title}} <p> posted by: {{comment.user.name}}</p> </h3> 
+  <h3> posted by: {{comment.user.name}}</h3> 
   
   <p>{{comment.comment}}</p>
   <hr>
 </div>
 {{/each}}
-<script src = "/js/comment.js"></script>
