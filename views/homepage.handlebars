@@ -1,15 +1,15 @@
 
 {{#each blogs as |blog| }}
-<div class="row mb-4 blog">
-  <div class="col-md-5">
-    <h2><a href="/blogs/{{blog.id}}">{{blog.title}}</a></h2>
+<div class='row mb-4 blog'>
+  <div class='col-md-5'>
+    <h2><a href='/blogs/{{blog.id}}'>{{blog.title}}</a></h2>
     <p>
       {{blog.body}}
     </p>
     <p>Created by {{blog.user.name}}</p>
   </div>
   <hr>
-  <div class="col-md-7">
+  <div class='col-md-7'>
   </div>
 </div>
 {{/each}}

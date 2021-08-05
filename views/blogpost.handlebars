@@ -1,32 +1,33 @@
-<div class="text-center">
+<div class='text-center'>
   <h2>{{blog.title}} </h2>
-  <h3 id="blog-id">{{blog.id}}</h3>
+  <h3 id='blog-id'>{{blog.id}}</h3>
   <p>{{blog.body}}</p>
   <p>Created by {{blog.user.name}}</p>
 </div>
 <hr>
-<div class="col-md-6">
+<div class='col-md-6'>
     <h2>leave a comment</h2>
 
-    <form class="form comment-form">
-      <div class="form-group">
-        <label for="commentform">comment</label>
-        <input class="form-input" type="comment" id="comment-comment" />
+    <form class='form comment-form'>
+      <div class='form-group'>
+        <label for='commentform'>comment</label>
+        <input class='form-input' type='comment' id='comment-comment' />
       </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">post</button>
+      <div class='form-group'>
+        <button class='btn btn-primary' type='submit'>post</button>
       </div>
     </form>
   </div>
   <hr>
+
+  
 <h2>COMMENT SECTION</h2>
 
-
+<div class="comment-section">
 {{#each blog.comments as |comment|}}
-<div class="text-center">
-  <h3> posted by: {{comment.user.name}}</h3> 
-  
-  <p>{{comment.comment}}</p>
-  <hr>
-</div>
+{{> comments}}
 {{/each}}
+  </div>
+<script src='/js/comments.js'/>
+<script src='/js/handlebars_if.js'/>
+
