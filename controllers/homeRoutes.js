@@ -64,7 +64,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
     const blogData = await Blogs.findAll({
       include: [{
         model: User,
-        attributes: ['name']
+        attributes: ['name',]
       }]
     });
     const blogs = blogData.map((blog) => blog.get({ plain: true }));

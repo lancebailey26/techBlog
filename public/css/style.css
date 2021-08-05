@@ -17,3 +17,34 @@ header, .project:not(:last-child) {
     text-decoration: underline;
   }
   
+.nav{
+  font-size: 30px;
+  background-color:darkgray;
+}
+.nav-item{
+  color: black;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.main {
+    
+  /* margin: auto; */
+  /* width: 50%; */
+
+  border-radius:5px;
+
+  text-align: center;
+  padding: 16px;
+  margin-top: 100px;
+  margin-bottom:20px;
+  height: auto;
+}
+.form-input{
+  width: 50%;
+  margin-bottom: 15px;
+  margin-left: 25%;
+  margin-right: 50%;
+}
+.hide{
+  display: none;
+}

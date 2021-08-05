@@ -1,23 +1,22 @@
 <div class='text-center'>
   <h2>{{blog.title}} </h2>
-  <h3 id='blog-id'>{{blog.id}}</h3>
+  <h3 id='blog-id' class='hide'>{{blog.id}}</h3>
   <p>{{blog.body}}</p>
   <p>Created by {{blog.user.name}}</p>
 </div>
 <hr>
-<div class='col-md-6'>
+<div class='main'>
     <h2>leave a comment</h2>
 
     <form class='form comment-form'>
       <div class='form-group'>
-        <label for='commentform'>comment</label>
-        <input class='form-input' type='comment' id='comment-comment' />
+        <input class='form-input' type='comment' id='comment-comment' placeholder="comment" />
       </div>
       <div class='form-group'>
         <button class='btn btn-primary' type='submit'>post</button>
       </div>
     </form>
-  </div>
+  
   <hr>
 
   
@@ -27,6 +26,7 @@
 {{#each blog.comments as |comment|}}
 {{> comments}}
 {{/each}}
+  </div>
   </div>
 <script src='/js/comments.js'/>
 <script src='/js/handlebars_if.js'/>
