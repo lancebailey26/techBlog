@@ -45,6 +45,23 @@ router.get('/blogs/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+router.get('/blogs/edit/:id', async (req, res) => {
+  try {
+    const blogData = await Blogs.findByPk(req.params.id, {
+     include: {
+        model: User,
+        attributes: ['name']
+    }
+})
+
+    const blog = blogData.get({ plain: true });
+    console.log(blog);
+
+    res.render('indblog', {blog, logged_in: req.session.logged_in });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route

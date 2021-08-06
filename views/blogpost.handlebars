@@ -3,6 +3,7 @@
   <h3 id='blog-id' class='hide'>{{blog.id}}</h3>
   <p>{{blog.body}}</p>
   <p>Created by {{blog.user.name}} at {{format_date blog.datetime}}</p>
+  <a href='/blogs/edit/{{blog.id}}'><button class="btn btn-primary">edit</button></a>
 </div>
 <hr>
 <div class='main'>
@@ -16,6 +17,7 @@
         <button class='btn btn-primary' type='submit'>post</button>
       </div>
     </form>
+    
   
   <hr>
 
@@ -29,5 +31,3 @@
   </div>
   </div>
 <script src='/js/comments.js'/>
-<script src='/js/handlebars_if.js'/>
-

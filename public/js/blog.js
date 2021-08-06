@@ -5,7 +5,7 @@ const newFormHandler = async (event) => {
     const body = document.querySelector('#blog-body').value.trim();
   
     if (title && body) {
-      const response = await fetch(`/api/blog`, {
+      const response = await fetch(`/api/blogs`, {
         method: 'POST',
         body: JSON.stringify({ title, body }),
         headers: {
@@ -32,11 +32,12 @@ const newFormHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/dashboard');
       } else {
-        alert('Failed to delete blog');
+        alert('Failed to delete blog, you may only delete blogs posted by you.');
       }
     }
   };
-  
+
+
   document
     .querySelector('.new-blog-form')
     .addEventListener('submit', newFormHandler);

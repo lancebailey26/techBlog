@@ -33,7 +33,7 @@ const commentHandler = async (event) => {
       if (response.ok) {
         document.location.reload();
       } else {
-        alert('Failed to delete comment');
+        alert('Failed to delete comment, you may only delete comments posted by you.');
       }
     
   };

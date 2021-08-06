@@ -1,0 +1,18 @@
+<div class='text-center'>
+  <h2>{{blog.title}} </h2>
+  <h3 id='blog-id' class='hide'>{{blog.id}}</h3>
+  <p>{{blog.body}}</p>
+  <p>Created by {{blog.user.name}} at {{format_date blog.datetime}}</p>
+  {{!-- <button class="btn btn-primary" type='submit' href='blogs/edit/{{id}}'>edit</button> --}}
+</div>
+<hr>
+<div class='main'>
+    <h2>edit</h2>
+    <form class='form edit-blog-form'>
+  <input class='form-input ' type='text' id='edit-blog-title' name='blog-title' placeholder="Blog Title"/>
+  <textarea class='form-input form-control-lg' id='edit-blog-body' name='blog-body' placeholder="Blog Body"></textarea>
+  <button type='submit' class='btn btn-primary' data-id='{{blog.id}}'id='subedit'>edit</button>
+</form>
+
+</div>
+<script src='/js/editblog.js'/>
