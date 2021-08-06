@@ -25,6 +25,10 @@ Blogs.init(
         body: {
             type: DataTypes.TEXT,
             allowNull: false,        
+        },
+        datetime: {
+            type: DataTypes.DATE,
+            allowNull: false
         }
     },
 {

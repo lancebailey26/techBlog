@@ -6,5 +6,11 @@ module.exports = {
         if (session == blogger){
         return true
         }
+        
+},
+format_date: (datetime) => {
+    // Format date as MM/DD/YYYY
+    return datetime.toLocaleString();
+    
 }
 }

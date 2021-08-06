@@ -7,7 +7,8 @@ CREATE TABLE blogs (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
     blogger_id INTEGER NOT NULL REFERENCES user(id),
     title VARCHAR(30) NOT NULL UNIQUE,
-    body TEXT NOT NULL
+    body TEXT NOT NULL,
+    datetime DATE NOT NULL
 );
 
 CREATE TABLE user (
@@ -21,5 +22,6 @@ CREATE TABLE comments (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
     author_id INTEGER NOT NULL REFERENCES user(id),
     comment TEXT NOT NULL,
-    posted_on INTEGER NOT NULL REFERENCES blogs(id)
+    posted_on INTEGER NOT NULL REFERENCES blogs(id),
+    datetime DATE NOT NULL
 );

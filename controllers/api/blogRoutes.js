@@ -1,12 +1,14 @@
 const router = require('express').Router();
 const { Blogs } = require('../../models');
 const withAuth = require('../../utils/auth');
+var moment = require('moment');
 
 router.post('/', withAuth, async (req, res) => {
   try {
     const newBlog = await Blogs.create({
       ...req.body,
       blogger_id: req.session.user_id,
+      datetime: moment().format()
     });
 
     res.status(200).json(newBlog);

@@ -31,6 +31,10 @@ Comments.init(
                 key: 'id',
             }
         
+        },
+        datetime: {
+            type: DataTypes.DATE,
+            allowNull: false
         }
     },
 {
